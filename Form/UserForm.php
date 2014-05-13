@@ -1,6 +1,6 @@
 <?php
 
-namespace project\Form;
+namespace Project\Form;
 
 use Symfony\Component\Validator\ExecutionContextInterface;
 use Project\Form\DataTransformer\BooleanTransformer;
