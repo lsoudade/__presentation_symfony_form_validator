@@ -1,0 +1,48 @@
+{% extends "Layout/main.twig" %}
+    
+{% block content %}
+    
+    {# Afficher tout le form d'un coup #}
+
+    <form action="{{ path('user_create') }}" method="post">
+        {{ form(form) }}
+
+        <button type="submit">{{ 'form.submit'|trans }}</button>
+    </form>
+
+
+    {# Afficher le form par champs #}
+
+    <form action="{{ path('user_create') }}" method="post">
+        <div class="form-group form-group-username">
+            {{ form_row(form.username) }}
+        </div>
+        <div class="form-group form-group-email">
+            {{ form_row(form.email) }}
+        </div>
+        <div class="form-group form-group-password">
+            {{ form_row(form.password) }}
+        </div>
+        <div class="form-group form-group-rules">
+            {{ form_errors(form.rules) }}
+            {{ form_widget(form.rules) }}
+            {{ form_label(form.rules) }}
+        </div>
+
+        {{ form_rest(form) }}
+
+        <button type="submit">{{ 'form.submit'|trans }}</button>
+    </form>
+
+
+    {# Form theme #}
+
+    {% form_theme form 'form_div_layout.twig' %}
+
+    <form action="{{ path('user_create') }}" method="post">
+        {{ form(form) }}
+
+        <button type="submit">{{ 'form.submit'|trans }}</button>
+    </form>
+
+{% endblock %} 
