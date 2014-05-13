@@ -35,7 +35,8 @@ class UserForm
                 new Assert\Email(),
                 new Assert\Callback(array(array($this, 'uniqueEmail')))
             )
-        ));
+        ))
+        ->add('website', new WebsiteType());
         
         $builder->add($builder->create('password', 'repeated', array(
             'type'            => 'password',
